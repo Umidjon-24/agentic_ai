@@ -15,7 +15,7 @@ engine = create_engine(
 )
 
 def tool_db(query: str):
-    """Run a read-only SQL Server SELECT query.
+    """Run SQL query.
     Args:
         query
     """
@@ -34,7 +34,8 @@ config = types.GenerateContentConfig(
 # Make the request
 response = client.models.generate_content(
     model="gemini-2.5-flash",
-    contents="Give me product names with their prices",
+    contents="""
+    What are the names of customers?""",
     config=config,
 )
 
